@@ -6,10 +6,12 @@ import static org.junit.Assert.assertEquals;
 public class BedroomTest {
 
     private Bedroom bedroom;
+    private Guest guest1;
 
     @Before
     public void before() {
         bedroom = new Bedroom(1,2,"Double");
+        guest1 = new Guest("Eugene");
     }
 
     @Test
@@ -31,6 +33,20 @@ public class BedroomTest {
     public void roomStartsEmpty() {
         assertEquals(0, bedroom.countGuests());
     }
+
+    @Test
+    public void canAddGuest() {
+        bedroom.addGuest(guest1);
+        assertEquals(1, bedroom.countGuests());
+    }
+
+    @Test
+    public void canRemoveGuest() {
+        bedroom.addGuest(guest1);
+        bedroom.removeGuest(guest1);
+        assertEquals(0, bedroom.countGuests());
+    }
+
 
 
 }

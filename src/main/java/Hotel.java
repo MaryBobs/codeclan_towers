@@ -23,4 +23,24 @@ public class Hotel {
     public int countConferenceRooms() {
         return conferenceRooms.size();
     }
+
+    public void addBedroom(Bedroom bedroom1) {
+        bedrooms.add(bedroom1);
+    }
+
+//    public void checkInBedroom(Guest guest, Bedroom bedroom) {
+////        bedrooms.addGuest(guest);
+//        if (bedrooms.contains(bedroom)){
+//            bedrooms.indexOf(bedroom);
+//        }
+//    }
+
+        public void checkInBedroom(Guest guest, Bedroom bedroom) {
+        bedroom.addGuest(guest);
+        }
+
+    public void checkOutBedroom(Guest guest, Bedroom bedroom) {
+        bedroom.removeGuest(guest);
+    }
 }
+
