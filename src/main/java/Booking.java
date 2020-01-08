@@ -8,4 +8,11 @@ public class Booking {
         this.nights = nights;
     }
 
+    public int countNights() {
+        return nights;
+    }
+
+    public Bedroom getBedroom() {
+        return bedroom;
+    }
 }
