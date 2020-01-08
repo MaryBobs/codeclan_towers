@@ -46,5 +46,9 @@ public class Hotel {
     public Booking bookRoom(Bedroom bedroom, int nights) {
        return new Booking(bedroom,nights);
     }
+
+    public int totalBill(Booking booking) {
+        return booking.countNights() * booking.getBedroom().getCost();
+    }
 }
 

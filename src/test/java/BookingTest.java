@@ -12,8 +12,8 @@ public class BookingTest {
 
     @Before
     public void before() {
-        bedroom1 = new Bedroom(1,2,"Double");
-        bedroom2 = new Bedroom(2,1,"Single");
+        bedroom1 = new Bedroom(1,2,"Double",50);
+        bedroom2 = new Bedroom(2,1,"Single", 80);
         booking = new Booking(bedroom1, 2);
     }
 
