@@ -24,20 +24,19 @@ public class Hotel {
         return conferenceRooms.size();
     }
 
-    public void addBedroom(Bedroom bedroom1) {
-        bedrooms.add(bedroom1);
+    public void addBedroom(Bedroom bedroom) {
+        bedrooms.add(bedroom);
     }
 
-//    public void checkInBedroom(Guest guest, Bedroom bedroom) {
-////        bedrooms.addGuest(guest);
-//        if (bedrooms.contains(bedroom)){
-//            bedrooms.indexOf(bedroom);
-//        }
-//    }
-
-        public void checkInBedroom(Guest guest, Bedroom bedroom) {
-        bedroom.addGuest(guest);
+    public void checkInBedroom(Guest guest, Bedroom bedroom) {
+        if (bedrooms.contains(bedroom)){
+            bedroom.addGuest(guest);
         }
+    }
+
+//        public void checkInBedroom(Guest guest, Bedroom bedroom) {
+//        bedroom.addGuest(guest);
+//        }
 
     public void checkOutBedroom(Guest guest, Bedroom bedroom) {
         bedroom.removeGuest(guest);
@@ -49,6 +48,15 @@ public class Hotel {
 
     public int totalBill(Booking booking) {
         return booking.countNights() * booking.getBedroom().getCost();
+    }
+
+    public ArrayList<Bedroom> vacantBedrooms() {
+        ArrayList<Bedroom> vacancies = new ArrayList<Bedroom>();
+        for (Bedroom bedroom : bedrooms) {
+            if (bedroom.countGuests() == 0);
+                vacancies.add(bedroom);
+        }
+        return vacancies;
     }
 }
 
